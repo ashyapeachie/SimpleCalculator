@@ -26,30 +26,50 @@ manually coded to be self contained version
             { Text = "Number 2:", Location = new Point(10, 60) };
             textBox2 = new TextBox() { Location = new Point(100, 60), Width = 150 };
 
-            btnAdd = new Button() {};
-            btnSubtract = new Button() {};
-            btnMultiply = new Button() {};
-            btnDivide = new Button() {};
+            btnAdd = new Button() { };
+            btnSubtract = new Button() { };
+            btnMultiply = new Button() { };
+            btnDivide = new Button() { };
 
             labelResult = new Label() {
                 Text = "Result:", Location = new Point(10, 150), Width = 250 };
 
-            // btnAdd.Click += (s, e) -> Calculate((a, b) -> a + b);
-            // btnSubtract.Click += (s, e) -> Calculate((a, b) -> a + b);
-            // btnMultiply.Click += (s, e) -> Calculate((a, b) -> a + b);
-            // btnDivide.Click += (s, e) -> Calculate((a, b) -> a + b);
+            btnAdd.Click += (s, e) =>Calculate((a, b)->a + b);
+            btnSubtract.Click += (s, e) =>Calculate((a, b)->a + b);
+            btnMultiply.Click += (s, e) =>Calculate((a, b)->a + b);
+            btnDivide.Click += (s, e) =>
+            { 
+                if (GetNumber(textBox2) == 0)
+                {
+                    MessageBox.Show("Can't divide by zero.");
+                    return;
+                }
+                Calculate((a, b) => a / b);
+            };
+
+            Controls.AddRange(new Control[] {
+                lbl1, textBox1, lbl2, textBox2, btnAdd, btnSubtract, btnMultiply,
+                btnDivide, labelResult
+            });
         }
 
-        private void Calculate() {
+        private void Calculate(Func < double, double, double > operation) {
             double num1 = GetNum();
             double num2 = GetNum();
             double result = operation();
         }
 
-        // private double
+        private double GetNum(TextBox tb) {
+            if (double.TryParse(tb.Text, out double val)) return val;
+            MessageBox.Show("Invalid input.");
+            return 0;
+        }
 
+        [STAThread]
+        //
         public static void Main() {
-
+            Application.EnableVisualStyles();
+            Application.Run(new CalculatorForm());
         }
 
     }
