@@ -1,15 +1,35 @@
 /* 
-* Author:
-* Filename:
+* Author: Ashya Hamer
+* Filename: SimpleCalculator.cs
 * Description: This program is a simple calculator using C#. Program should have
 basic arithmetic using textboxes and buttons- but the C# WindowsFrorms app is 
 manually coded to be self contained version
  */
 
+ using System;
+// imports the System namespace 
+
  namespace SimpleCalculator {
     public class CalculatorForm : Form {
-        private TextBox, textBox1, textBox2;
-        private
-        private
+        // private TextBox, textBox1, textBox2;
+        private Label labelResults;
+        private Button btnAdd, btnSubtract, btnMultiply, btnDivide;
+
+        public CalculatorForm() {
+            // this.Text = "Simple Calculator";
+            // this.Size =
+        }
+
+        // private void
+
+        // private double
+
+        public static void Main() {
+
+        }
+
     }
  }
+
+ // handwriting syntax for file to learn C#
+ // noticing C# is very similar to Java :)
