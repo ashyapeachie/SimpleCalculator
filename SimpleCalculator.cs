@@ -21,26 +21,30 @@ manually coded to be self contained version
 
             Label lbl1 = new Label()
             { Text = "Number 1: ", Location = new Point(10, 20) };
-            textBox1 = new TextBox() { };
-            Label lbl2 = new labelResult()
-            { Text };
-            // textBox2 = new TextBox() {};
+            textBox1 = new TextBox() { Location = new Point(100, 20), Width = 150 };
+            Label lbl2 = new Label()
+            { Text = "Number 2:", Location = new Point(10, 60) };
+            textBox2 = new TextBox() { Location = new Point(100, 60), Width = 150 };
 
-            // btnAdd
-            // btnSubtract
-            // btnMultiply
-            // btnDivide
+            btnAdd = new Button() {};
+            btnSubtract = new Button() {};
+            btnMultiply = new Button() {};
+            btnDivide = new Button() {};
 
             labelResult = new Label() {
                 Text = "Result:", Location = new Point(10, 150), Width = 250 };
 
-            // btnAdd.Click
-            // btnSubtract.Click
-            // btnMultiply.Click
-            // btnDivide.Click
+            // btnAdd.Click += (s, e) -> Calculate((a, b) -> a + b);
+            // btnSubtract.Click += (s, e) -> Calculate((a, b) -> a + b);
+            // btnMultiply.Click += (s, e) -> Calculate((a, b) -> a + b);
+            // btnDivide.Click += (s, e) -> Calculate((a, b) -> a + b);
         }
 
-        // private void
+        private void Calculate() {
+            double num1 = GetNum();
+            double num2 = GetNum();
+            double result = operation();
+        }
 
         // private double
 
