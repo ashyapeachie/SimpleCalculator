@@ -11,13 +11,33 @@ manually coded to be self contained version
 
  namespace SimpleCalculator {
     public class CalculatorForm : Form {
-        // private TextBox, textBox1, textBox2;
+        private TextBox, textBox1, textBox2;
         private Label labelResults;
         private Button btnAdd, btnSubtract, btnMultiply, btnDivide;
 
         public CalculatorForm() {
-            // this.Text = "Simple Calculator";
-            // this.Size =
+            this.Text = "Simple Calculator";
+            this.Size = new Size(300, 250);
+
+            Label lbl1 = new Label()
+            { Text = "Number 1: ", Location = new Point(10, 20) };
+            textBox1 = new TextBox() { };
+            Label lbl2 = new labelResult()
+            { Text };
+            // textBox2 = new TextBox() {};
+
+            // btnAdd
+            // btnSubtract
+            // btnMultiply
+            // btnDivide
+
+            labelResult = new Label() {
+                Text = "Result:", Location = new Point(10, 150), Width = 250 };
+
+            // btnAdd.Click
+            // btnSubtract.Click
+            // btnMultiply.Click
+            // btnDivide.Click
         }
 
         // private void
