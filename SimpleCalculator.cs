@@ -6,11 +6,13 @@ basic arithmetic using textboxes and buttons- but the C# WindowsFrorms app is
 manually coded to be self contained version
  */
 
- using System;
+using System;
 // imports the System namespace 
 
- namespace SimpleCalculator {
+namespace SimpleCalculator {
+// defines a scope
     public class CalculatorForm : Form {
+    // all C# code is contained in classes
         private TextBox, textBox1, textBox2;
         private Label labelResults;
         private Button btnAdd, btnSubtract, btnMultiply, btnDivide;
@@ -34,11 +36,11 @@ manually coded to be self contained version
             labelResult = new Label() {
                 Text = "Result:", Location = new Point(10, 150), Width = 250 };
 
-            btnAdd.Click += (s, e) =>Calculate((a, b)->a + b);
-            btnSubtract.Click += (s, e) =>Calculate((a, b)->a + b);
-            btnMultiply.Click += (s, e) =>Calculate((a, b)->a + b);
+            btnAdd.Click += (s, e) => Calculate((a, b)->a + b);
+            btnSubtract.Click += (s, e) => Calculate((a, b)->a + b);
+            btnMultiply.Click += (s, e) => Calculate((a, b)->a + b);
             btnDivide.Click += (s, e) =>
-            { 
+            {
                 if (GetNumber(textBox2) == 0)
                 {
                     MessageBox.Show("Can't divide by zero.");
@@ -53,10 +55,11 @@ manually coded to be self contained version
             });
         }
 
-        private void Calculate(Func < double, double, double > operation) {
-            double num1 = GetNum();
-            double num2 = GetNum();
-            double result = operation();
+        private void Calculate(Func<double, double, double> operation) {
+            double num1 = GetNum(textBox1);
+            double num2 = GetNum(textBox2);
+            double result = operation(num1, num2);
+            labelResults.Text = $"Result: {result}";
         }
 
         private double GetNum(TextBox tb) {
