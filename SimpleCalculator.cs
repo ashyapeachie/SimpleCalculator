@@ -7,13 +7,15 @@ manually coded to be self contained version
  */
 
 using System;
+using System.Drawing;
+using System.Windows.Forms;
 // imports the System namespace 
 
 namespace SimpleCalculator {
 // defines a scope
     public class CalculatorForm : Form {
     // all C# code is contained in classes
-        private TextBox, textBox1, textBox2;
+        // private TextBox, textBox1, textBox2; - need to figure this out
         private Label labelResults;
         private Button btnAdd, btnSubtract, btnMultiply, btnDivide;
 
@@ -59,6 +61,7 @@ namespace SimpleCalculator {
             double num1 = GetNum(textBox1);
             double num2 = GetNum(textBox2);
             double result = operation(num1, num2);
+            // variable data type- double
             labelResults.Text = $"Result: {result}";
         }
 
@@ -69,14 +72,18 @@ namespace SimpleCalculator {
         }
 
         [STAThread]
-        //
         public static void Main() {
+        // program entry point 
             Application.EnableVisualStyles();
             Application.Run(new CalculatorForm());
         }
 
     }
- }
+
+    internal class TextBox
+    {
+    }
+}
 
  // handwriting syntax for file to learn C#
  // noticing C# is very similar to Java :)
