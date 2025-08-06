@@ -19,10 +19,14 @@ namespace SimpleCalculator {
         private Label labelResults;
         private Button btnAdd, btnSubtract, btnMultiply, btnDivide;
 
-        public CalculatorForm() {
+        public CalculatorForm()
+        {
             this.Text = "Simple Calculator";
             this.Size = new Size(300, 250);
+            // window's title will be "Simple Calculator" 
+            // the form size is set to 300 x 250 pixels 
 
+            /* labels and textboxes for inputs */
             Label lbl1 = new Label()
             { Text = "Number 1: ", Location = new Point(10, 20) };
             textBox1 = new TextBox() { Location = new Point(100, 20), Width = 150 };
@@ -30,17 +34,26 @@ namespace SimpleCalculator {
             { Text = "Number 2:", Location = new Point(10, 60) };
             textBox2 = new TextBox() { Location = new Point(100, 60), Width = 150 };
 
-            btnAdd = new Button() { Text ="+", Location = new Point(10, 100) };
+            /* buttons for arithmetic */
+            btnAdd = new Button() { Text = "+", Location = new Point(10, 100) };
             btnSubtract = new Button() { Text = "-", Location = new Point(60, 100) };
             btnMultiply = new Button() { Text = "x", Location = new Point(110, 100) };
             btnDivide = new Button() { Text = "÷", Location = new Point(160, 100) };
+            // each button corresponds to an arithmetic operation
+            // spaced horizontally
 
-            labelResult = new Label() {
-                Text = "Result:", Location = new Point(10, 150), Width = 250 };
+            /* result label */
+            labelResult = new Label()
+            {
+                Text = "Result:",
+                Location = new Point(10, 150),
+                Width = 250
+            };
 
+            /* event handling */
             btnAdd.Click += (s, e) => Calculate((a, b)->a + b);
-            btnSubtract.Click += (s, e) => Calculate((a, b)->a + b);
-            btnMultiply.Click += (s, e) => Calculate((a, b)->a + b);
+            btnSubtract.Click += (s, e) => Calculate((a, b)->a - b);
+            btnMultiply.Click += (s, e) => Calculate((a, b)->a * b);
             btnDivide.Click += (s, e) =>
             {
                 if (GetNumber(textBox2) == 0)
@@ -50,11 +63,13 @@ namespace SimpleCalculator {
                 }
                 Calculate((a, b) => a / b);
             };
+            // specific division handling that checks for division by zero
 
             Controls.AddRange(new Control[] {
                 lbl1, textBox1, lbl2, textBox2, btnAdd, btnSubtract, btnMultiply,
                 btnDivide, labelResult
             });
+            // adds all defined controls to the form so they appear in the UI
         }
 
         private void Calculate(Func<double, double, double> operation) {
