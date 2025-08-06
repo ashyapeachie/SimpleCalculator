@@ -32,8 +32,8 @@ namespace SimpleCalculator {
 
             btnAdd = new Button() { Text ="+", Location = new Point(10, 100) };
             btnSubtract = new Button() { Text = "-", Location = new Point(60, 100) };
-            btnMultiply = new Button() { };
-            btnDivide = new Button() { };
+            btnMultiply = new Button() { Text = "x", Location = new Point(110, 100) };
+            btnDivide = new Button() { Text = "÷", Location = new Point(160, 100) };
 
             labelResult = new Label() {
                 Text = "Result:", Location = new Point(10, 150), Width = 250 };
