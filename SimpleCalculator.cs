@@ -9,7 +9,7 @@ manually coded to be self contained version
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-// imports the System namespace 
+// imports the System namespace (like import in other languages)
 
 namespace SimpleCalculator {
 // defines a scope
@@ -30,8 +30,8 @@ namespace SimpleCalculator {
             { Text = "Number 2:", Location = new Point(10, 60) };
             textBox2 = new TextBox() { Location = new Point(100, 60), Width = 150 };
 
-            btnAdd = new Button() { };
-            btnSubtract = new Button() { };
+            btnAdd = new Button() { Text ="+", Location = new Point(10, 100) };
+            btnSubtract = new Button() { Text = "-", Location = new Point(60, 100) };
             btnMultiply = new Button() { };
             btnDivide = new Button() { };
 
@@ -63,6 +63,7 @@ namespace SimpleCalculator {
             double result = operation(num1, num2);
             // variable data type- double
             labelResults.Text = $"Result: {result}";
+            // assuming the method is being called
         }
 
         private double GetNum(TextBox tb) {
@@ -70,6 +71,7 @@ namespace SimpleCalculator {
             MessageBox.Show("Invalid input.");
             return 0;
         }
+        // method 
 
         [STAThread]
         public static void Main() {
