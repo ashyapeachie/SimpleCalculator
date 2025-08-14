@@ -14,19 +14,22 @@ using System.Windows.Forms;
 namespace SimpleCalculator {
 // defines a scope
     public class CalculatorForm : Form {
-    // all C# code is contained in classes
+        // all C# code is contained in classes
+        private TextBox textBox1, textBox2;
+        private Label labelResult;
+        private Button btnAdd, btnSubtract, btnMultipy, btnDivide;
         // private TextBox, textBox1, textBox2; - need to figure this out
-        private Label labelResults;
-        private Button btnAdd, btnSubtract, btnMultiply, btnDivide;
+        //private Label labelResults;
+        //private Button btnAdd, btnSubtract, btnMultiply, btnDivide;
 
         public CalculatorForm()
         {
             this.Text = "Simple Calculator";
+            // window's title will be "Simple Calculator"
             this.Size = new Size(300, 250);
-            // window's title will be "Simple Calculator" 
             // the form size is set to 300 x 250 pixels 
 
-            /* labels and textboxes for inputs */
+            /* labels and textboxes for number inputs from user */
             Label lbl1 = new Label()
             { Text = "Number 1: ", Location = new Point(10, 20) };
             textBox1 = new TextBox() { Location = new Point(100, 20), Width = 150 };
@@ -49,6 +52,7 @@ namespace SimpleCalculator {
                 Location = new Point(10, 150),
                 Width = 250
             };
+            // used to display the result of the operation
 
             /* event handling */
             btnAdd.Click += (s, e) => Calculate((a, b)->a + b);
@@ -64,6 +68,7 @@ namespace SimpleCalculator {
                 Calculate((a, b) => a / b);
             };
             // specific division handling that checks for division by zero
+            // shows message if the 2nd number is 0, otherwise performs division
 
             Controls.AddRange(new Control[] {
                 lbl1, textBox1, lbl2, textBox2, btnAdd, btnSubtract, btnMultiply,
@@ -97,9 +102,6 @@ namespace SimpleCalculator {
 
     }
 
-    internal class TextBox
-    {
-    }
 }
 
  // handwriting syntax for file to learn C#
