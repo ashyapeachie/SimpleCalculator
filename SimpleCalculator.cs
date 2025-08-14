@@ -6,6 +6,8 @@ basic arithmetic using textboxes and buttons- but the C# WindowsFrorms app is
 manually coded to be self contained version
  */
 
+// trying to figure out how to run program and if i need an extension to do so!
+
 using System;
 using System.Drawing;
 using System.Windows.Forms;
