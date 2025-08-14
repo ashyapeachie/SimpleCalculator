@@ -18,9 +18,6 @@ namespace SimpleCalculator {
         private TextBox textBox1, textBox2;
         private Label labelResult;
         private Button btnAdd, btnSubtract, btnMultipy, btnDivide;
-        // private TextBox, textBox1, textBox2; - need to figure this out
-        //private Label labelResults;
-        //private Button btnAdd, btnSubtract, btnMultiply, btnDivide;
 
         public CalculatorForm()
         {
@@ -60,7 +57,7 @@ namespace SimpleCalculator {
             btnMultiply.Click += (s, e) => Calculate((a, b)->a * b);
             btnDivide.Click += (s, e) =>
             {
-                if (GetNumber(textBox2) == 0)
+                if (GetNum(textBox2) == 0)
                 {
                     MessageBox.Show("Can't divide by zero.");
                     return;
