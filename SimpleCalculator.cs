@@ -19,7 +19,7 @@ namespace SimpleCalculator {
         // all C# code is contained in classes
         private TextBox textBox1, textBox2;
         private Label labelResult;
-        private Button btnAdd, btnSubtract, btnMultipy, btnDivide;
+        private Button btnAdd, btnSubtract, btnMultiply, btnDivide;
 
         public CalculatorForm()
         {
@@ -54,7 +54,7 @@ namespace SimpleCalculator {
             // used to display the result of the operation
 
             /* event handling */
-            btnAdd.Click += (s, e) => Calculate((a, b)->a + b);
+            btnAdd.Click += (s, e) => Calculate((a, b) => a + b);
             btnSubtract.Click += (s, e) => Calculate((a, b)->a - b);
             btnMultiply.Click += (s, e) => Calculate((a, b)->a * b);
             btnDivide.Click += (s, e) =>
@@ -81,7 +81,7 @@ namespace SimpleCalculator {
             double num2 = GetNum(textBox2);
             double result = operation(num1, num2);
             // variable data type- double
-            labelResults.Text = $"Result: {result}";
+            labelResult.Text = $"Result: {result}";
             // assuming the method is being called
         }
 
