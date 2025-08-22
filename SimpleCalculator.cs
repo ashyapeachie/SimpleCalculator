@@ -4,7 +4,7 @@
 * Description: This program is a simple calculator using C#. Program should have
 basic arithmetic using textboxes and buttons- but the C# WindowsFrorms app is 
 manually coded to be self contained version
- */
+*/
 
 using System;
 using System.Drawing;
