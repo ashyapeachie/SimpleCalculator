@@ -105,3 +105,7 @@ namespace SimpleCalculator {
 
  // handwriting syntax for file to learn C#
  // noticing C# is very similar to Java :)
+ /* to run in a Windows Forms app:
+    have a .csproj file that includes: <UseWindowsForms>true</UseWindowsForms>
+    .NET 6.0 or newer
+  */
